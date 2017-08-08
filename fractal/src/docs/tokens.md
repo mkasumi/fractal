@@ -2,17 +2,18 @@
 title: "Design tokens"
 label: "Design tokens"
 ---
-[Design tokens](https://medium.com/eightshapes-llc/25dd82d58421) are named entities that store visual design information. These are used in place of hard-coded values (such as hex values for color or pixels for spacing) in order to maintain a scalable, consistent system for UI development.
+
+[Design tokens](https://medium.com/eightshapes-llc/25dd82d58421) は視覚的なデザインの情報を総称したもの。これらはUIの開発において拡張しやすくメンテナンスすることを目的として、ハードコーディングされた値（カラーコードや、ピクセル単位の空白など）で使用する。
 
 
-## Colour Palettes
+## カラーパレット（Color Palettes）
 {% for palette, values in colors %}
-**{{ palette | capitalize }}** palette values. Accessed via `map(colors, {{ palette }}, <key>)`
+**{{ palette | capitalize }}** の値です。使い方：`map-get(${{ palette }}, <key>)`
 {% include "@palette-sample" %}
 {% endfor %}
 
-## Borders
-Width and radii tokens are used to style element borders. Accessed via `map(borders, <key>)`.
+## ボーダー
+ボーダー幅や角丸の値を指定します。使い方：`$<key>`
 
 Key         | Value
 ------------|------------
@@ -20,8 +21,8 @@ Key         | Value
 `{{ key }}` | {{ value }}
 {% endfor -%}
 
-## Breakpoints
-Breakpoint tokens are used within `@media` queries. Accessed via `map(breakpoints, <key>)`.
+## ブレークポイント
+ブレークポイントの値はメディアクエリーズと指定します。使い方：`@media min-width ($<key>) {...}`
 
 Key         | Value
 ------------|------------
@@ -30,10 +31,11 @@ Key         | Value
 {% endfor -%}
 
 
-## Font Families
-Font family tokens are used for typographic styling. Accessed via `map(fonts, <key>)`.
+## 書体
+書体を指定します。使い方：`$<key>`
 
 英字を指定するときは、変数名の最後を「-en」にしてください。
+数字を指定するときは、変数名の最後を「-num」にしてください。
 
 {% set lanEn = r/.*en/g %}
 {% set lanNum = r/.*num/g %}
@@ -50,8 +52,8 @@ Font family tokens are used for typographic styling. Accessed via `map(fonts, <k
 </div>
 {% endfor -%}
 
-## Layers
-Layering tokens set the `z-index` layer value for elements. Accessed via `map(layers, <key>)`.
+## レイヤー
+レイヤーでは `z-index` の値を指定します。使い方：`$<key>`
 
 Key         | Value
 ------------|------------
@@ -61,7 +63,7 @@ Key         | Value
 
 
 ## Containers
-コンテナーのサイズ一覧 @_containers.scss
+コンテナーのサイズ一覧です。使い方：`$<key>`
 
 Key         | Value
 ------------|------------
