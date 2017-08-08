@@ -1,0 +1,18 @@
+{{> @body-start}}
+<article class="p-article">
+    <header class="p-article-header">
+        <h1 class="p-article-header__title">記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。</h1>
+        <p class="p-article-header__published">Published <time>2017.01.01</time></p>
+    </header>
+    {{> @units}}
+    <p class="p-article-continue"><a href="#" class="c-btn-link">つづきを読む</a></p>
+    <footer class="p-artcle-footer">
+        <dl class="c-tags">
+            <dt class="c-tag__label"><span class="fa fa-tag"></span><span class="hide-visually">タグ</span></dt>
+            <dd class="c-tag__item"><a href="#" class="c-tag__link">CMS</a></dd>
+            <dd class="c-tag__item"><a href="#" class="c-tag__link">CSS</a></dd>
+            <dd class="c-tag__item"><a href="#" class="c-tag__link">レスポンシブ</a></dd>
+        </dl>
+        {{> @sns-btn}}
+    </footer>
+</article>

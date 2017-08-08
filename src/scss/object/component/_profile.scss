@@ -1,0 +1,60 @@
+/* ------------------------------
+　　プロフィール
+------------------------------ */
+.c-profile {
+    max-width: 400px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.c-profile__figure {
+    margin: 0 auto 15px;
+    width: 100px;
+    height: 100px;
+}
+
+.c-profile__figure-img {
+    max-width: 100%;
+    height: auto;
+    clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
+}
+
+.c-profile__name {
+    margin: 0 0 10px;
+}
+
+.c-profile__detail {
+    margin: 0 0 10px 0;
+    @include font-size(12);
+}
+
+.c-sns {
+    display: flex;
+    list-style: none;
+    margin: 0 -10px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    @include font-size(14);
+}
+
+.c-sns__list {
+    margin: 0 10px;
+}
+
+.c-sns__link {
+    display: block;
+    width: 14px;
+    color: map-get($color-neutral, base);
+
+    &:visited,
+    &:hover,
+    &:active,
+    &:focus {
+        color: map-get($color-neutral, base);
+    }
+
+    &:hover {
+        color: map-get($color-neutral, dark);
+    }
+}

@@ -1,0 +1,44 @@
+/* ------------------------------
+　　ベース
+------------------------------ */
+html {
+  height: 100%;
+}
+
+body {
+  color: map-get($color-text, base);
+  font-family: $font-base;
+  @include font-size(16);
+}
+
+/* リンクの設定 */
+a {
+    color: map-get($color-text, base);
+    text-decoration: none;
+
+    &:visited,
+    &:active,
+    &:focus {
+      color: map-get($color-text, base);
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+}
+
+/* コンテナー */
+.container {
+  margin: 0 auto;
+  max-width: $container;
+  padding-left: ($gutter/2);
+  padding-right: ($gutter/2);
+}
+
+.container-md {
+  margin: 0 auto;
+  max-width: $container-md;
+  padding-left: ($gutter/2);
+  padding-right: ($gutter/2);
+}
+

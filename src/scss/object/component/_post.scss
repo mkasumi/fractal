@@ -1,0 +1,51 @@
+/* ------------------------------
+　　ポスト
+------------------------------ */
+.c-post {
+  list-style: none;
+  margin: 0 0 30px 0;
+  padding: 0;
+  border-top: $border-width-thin solid map-get($color-neutral, base);
+}
+
+.c-post__item {
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: $border-width-thin solid map-get($color-neutral, base);
+}
+
+.c-post-header {
+  display: block;
+  margin: 0 0 20px 0;
+}
+
+.c-post__title {
+  margin: 10px 0 15px 0;
+  @include font-size(22);
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.c-post__title-link {
+  &:hover {
+    text-decoration: none;
+  }
+  &:hover,
+  &:visited,
+  &:active,
+  &:focus {
+    color: map-get($color-text, base);
+  }
+}
+
+.c-post__published {
+  @include font-size(12);
+}
+
+@media screen and (min-width: $breakpoint-md-min) {
+  .c-post__title-link {
+    &:hover {
+      color: map-get($color-primary, base);
+    }
+  }
+}

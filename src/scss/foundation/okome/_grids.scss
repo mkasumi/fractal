@@ -1,0 +1,38 @@
+$cols: 12;
+
+// ---------------
+// 幅
+// ---------------
+// 1カラム
+@include make-grid(col,null,$cols);
+
+//---------------
+//小幅のグリッド
+//---------------
+@media (min-width : $breakpoint-sm-min)  {
+	// カラム
+	@include make-grid(col,sm,$cols);
+}
+
+//---------------
+//中くらい幅のグリッド
+//---------------
+@media (min-width : $breakpoint-md-min) {
+
+	@include make-grid(col,md,$cols);
+}
+
+//---------------
+//デスクトップ幅（1024px以上）のグリッド
+//---------------
+@media (min-width : $breakpoint-lg-min) {
+
+	@include make-grid(col,lg,$cols);
+}
+
+//---------------
+//デスクトップ幅（1440px以上）のグリッド
+//---------------
+@media (min-width : $breakpoint-xl-min) {
+	@include make-grid(col,xl,$cols);
+}

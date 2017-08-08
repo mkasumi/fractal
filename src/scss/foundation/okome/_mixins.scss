@@ -1,0 +1,85 @@
+// ------------------------------
+// Grid
+// ------------------------------
+@mixin make-grid($name,$grid-name,$number){
+	@for $i from 1 through $number{
+		@if $grid-name{
+			.#{$name}-#{$grid-name}-#{$i}{
+				@if $i != $number {
+					float: left;
+				} @else{
+					float: none;
+				}
+				width: percentage($i / $number);
+			}
+		} @else {
+			.#{$name}-#{$i}{
+				@if $i != $number {
+					float: left;
+				} @else{
+					float: none;
+				}
+				width: percentage($i / $number);
+			}
+		}
+	}
+}
+
+
+// ------------------------------
+// clearfix
+// ------------------------------
+
+@mixin clearfix(){
+	 &:before,
+	 &:after {
+		content: " ";
+		display: table;
+	}
+	 &:after {
+		clear: both;
+	}
+}
+
+
+// ------------------------------
+// フォントサイズ
+// ------------------------------
+
+@mixin font-size($sizeValue){
+	font-size: $sizeValue + px;
+	// font-size: ($sizeValue / 10) * 1rem;
+}
+
+
+// ------------------------------
+// プレースホルダー
+// ------------------------------
+@mixin placeholder($color){
+	 &:-moz-input-placeholder {
+		color: $color;
+	}
+	  &:-ms-input-placeholder {
+		color: $color;
+	 }
+	 &::-webkit-input-placeholder  {
+		color: $color;
+	}
+}
+
+
+// ------------------------------
+//　ユーティリティ
+// ------------------------------
+@mixin visually-hidden(){
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+

@@ -1,0 +1,72 @@
+/* ------------------------------
+　　ボタン
+------------------------------ */
+/* 　ボタン
+------------------------------ */
+.c-btn {
+  display: block;
+  padding: 10px 30px;
+  color: map-get($color-primary, base);
+  line-height: 1.2;
+  @include font-size(16);
+  text-align: center;
+  border: $border-width-thin solid map-get($color-primary, base);
+  border-radius: $border-radius-md;
+  background: #fff;
+  overflow: hidden;
+  transition: background-color .3s;
+
+  &:hover,
+  &:visited,
+  &:active,
+  &:focus {
+    color: map-get($color-primary, base);
+    text-decoration: none;
+  }
+
+  &:hover {
+    background: map-get($color-bg, base);
+  }
+}
+
+@media screen and (min-width: $breakpoint-md-min) {
+  .c-btn {
+    &:hover {
+      color: #FFF;
+      background: map-get($color-primary, base);
+      transition: all .3s ease;
+    }
+  }
+}
+
+.c-btn-link {
+  position: relative;
+  display: block;
+  padding: 10px 30px 10px 0;
+  font-weight: bold;
+  border-bottom: $border-width-thick solid map-get($color-primary, base);
+
+  &:after {
+    content: $fa-var-angle-right;
+    position: absolute;
+    top: 13px;
+    right: 0;
+    @include fa-icon();
+    transition: color .2s;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@media screen and (min-width: $breakpoint-md-min) {
+  .c-btn-link {
+    &:hover {
+      color: map-get($color-primary, base);
+      &:after {
+        color: map-get($color-text, base);
+      }
+    }
+  }
+}

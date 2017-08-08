@@ -1,0 +1,65 @@
+/* ------------------------------
+　　カード
+------------------------------ */
+.c-card {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0 0 $gutter 0;
+    padding: 0;
+}
+
+.c-card__item {
+    display: flex;
+    width: (100%/2);
+    margin: 0 0 ($gutter/2) 0;
+    padding: 0 ($gutter/2);
+    box-sizing: border-box;
+}
+
+.c-card__link {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.c-card__figure {
+    margin: 0 0 10px 0;
+    overflow: hidden;
+
+    img {
+        transition: transform .3s;
+    }
+}
+
+
+.c-card__title {
+    margin: 0 0 10px 0;
+}
+
+.c-card__published {
+    margin: auto 0 10px 0;
+    color: map-get($color-text, mute);
+    @include font-size(12);
+}
+
+
+@media screen and (min-width: $breakpoint-md-min) {
+    .c-card__item {
+        width: (100%/4);
+    }
+
+    .c-card__link {
+        &:hover {
+            .c-card__title {
+                color: map-get($color-primary, base);
+            }
+            .c-card__figure img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

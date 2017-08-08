@@ -1,0 +1,118 @@
+$unit-type: ('image','file','map','yolp','youtube','video','eximage','media','quote','module');
+$align: ('left','right','center',auto);
+$unit-gutter: 30px;
+$unit-margin-bottom: $unit-gutter;
+
+$hightlight-colors:(#FFFF66,#a0FFFF,#99FF99,#FF9999,#FF66FF,#880000);
+
+@each $test in $unit-type {
+
+    [class*="column-#{$test}"] {
+      margin: 0 0 $unit-margin-bottom 0;
+
+      @if $test == 'map' {
+        border-right: ($unit-gutter / 2) solid transparent;
+        border-left: ($unit-gutter / 2) solid transparent;
+        box-sizing: border-box;
+        & > div {
+          max-width: 100%;
+        }
+      } @else {
+        padding-left: ($unit-gutter / 2);
+        padding-right: ($unit-gutter / 2);
+        box-sizing: border-box;
+      }
+
+      @if $test == 'image' or 'media' or 'eximage' {
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+        .caption {
+          margin: 5px 0 0 0;
+        }
+      }
+
+      @if $test == 'map' or 'yolp' {
+        & > img {
+          max-width: 100%;
+        }
+        // 地図ユニットのアイコンの調整
+        img {
+          width: auto;
+	        height: auto;
+        }
+      }
+
+      @if $test == 'yolp' {
+        width: auto !important;
+      }
+
+      .acms-entry-unit-full {
+        & {
+          width: auto !important;
+	      	max-width: 100%;
+        }
+      }
+    }
+
+  @each $align-name in $align {
+      .column-#{$test}-#{$align-name} {
+        @if $align-name == left {
+          float: left;
+        }
+
+        @if $align-name == right {
+          float: right;
+        }
+
+        @if $align-name == center {
+          display: block;
+          float: none;
+          margin-right: auto;
+          margin-left: auto;
+          text-align: center;
+        }
+
+        @if $align-name == auto {
+          
+        }
+      }
+  }
+}
+
+
+/* YouTube動画をレスポンシブ対応させるための記述 */
+.column-youtube,
+.column-iframe {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-top: 30px;
+	padding-bottom: (9/16) *100%;
+	overflow: hidden;
+
+	iframe,
+	object,
+	embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@for $i from 1 to 6 {
+  .highlight#{$i} {
+   
+  }
+}
+
+@each $hightlight-color in $hightlight-colors {
+  $index: index($hightlight-colors, $hightlight-color);
+
+  .highlight#{$index} {
+    background-color: $hightlight-color;
+  }
+}

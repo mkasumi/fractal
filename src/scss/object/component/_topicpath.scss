@@ -1,0 +1,56 @@
+/* ------------------------------
+　　トピックパス
+------------------------------ */
+.c-topicpath {
+  height: 30px;
+  margin-bottom: 10px;
+  background: #fff;
+  overflow: auto;
+}
+@media screen and (min-width: $breakpoint-md-min){
+  .c-topicpath {
+    margin-bottom: 30px;
+  }
+}
+
+.c-topicpath__list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  line-height: 1;
+  @include font-size(13);
+  white-space: nowrap;
+}
+
+.c-topicpath__item {
+  display: inline-block;
+  // padding: 8px 10px 8px 23px;
+  // background: url("#{$root-theme-img}common/arrow_topicpath.png") no-repeat top left;
+  &:first-child:before {
+    content: $fa-var-home;
+    margin: 0 10px 0 0;
+    @include fa-icon();
+    @include font-size(13);
+    color: map-get($color-primary, base);
+  }
+  &:after {
+    content: $fa-var-angle-right;
+    margin:  0 10px;
+    @include fa-icon();
+    @include font-size(13);
+    color: map-get($color-neutral, base);
+  }
+  &:last-child:after {
+    content: none;
+  }
+}
+
+.c-topicpath__link {
+  color: map-get($color-neutral, dark);
+  &:visited,
+  &:focus,
+  &:active {
+    color: map-get($color-neutral, dark);
+  }
+}
+

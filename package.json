@@ -1,0 +1,71 @@
+{
+  "name": "mkasumicom",
+  "version": "1.0.0",
+  "description": "Webサイト制作プロジェクト",
+  "keywords": [
+    "CMS"
+  ],
+  "config": {
+    "local": "http://mkasumi.com/",
+    "theme": "src"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css:watch": "gulp",
+    "css:build": "gulp project && gulp okome",
+    "css:token": "gulp design-tokens",
+    "styleguide": "fractal start --sync",
+    "start": "npm-run-all -p css:watch styleguide",
+    "build:styleguide": "fractal build"
+  },
+  "author": "KasumiMorita",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.8",
+    "browserify": "^13.1.1",
+    "devbridge-styleguide": "^0.4.17",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-import-resolver-webpack": "^0.8.1",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.9.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-changed": "^3.1.0",
+    "gulp-changed-in-place": "^2.0.3",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-gzip": "^1.4.0",
+    "gulp-newer": "^1.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^3.1.0",
+    "gulp-theo": "^1.0.0-alpha.4",
+    "gulp-watch": "^4.3.11",
+    "node-notifier": "^5.1.2",
+    "npm-run-all": "^4.0.2",
+    "onchange": "^3.2.1",
+    "uglify-js": "^3.0.8"
+  },
+  "dependencies": {
+    "@frctl/fractal": "^1.1.4",
+    "@frctl/mandelbrot": "^1.1.0",
+    "@frctl/nunjucks": "^1.0.3",
+    "awesome-sass-easing": "^1.1.2",
+    "google-maps": "^3.2.1",
+    "gulp-sass-json": "^1.0.1",
+    "install": "^0.10.1",
+    "scss-to-json": "^1.1.0",
+    "theo": "^6.0.0-alpha.6",
+    "underscore": "^1.8.3",
+    "url-dispatcher": "^0.1.5"
+  }
+}

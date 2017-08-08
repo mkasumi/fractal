@@ -1,0 +1,143 @@
+// ------------------------------
+//　ユーティリティ
+// ------------------------------
+@mixin visually-hidden(){
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+
+// ------------------------------
+//　ボーダー
+// ------------------------------
+@mixin dotted($position: left,$color:rgba(#000, 1.0), $stripe: 1, $spacing: 4, $width:1) {
+  border: none;
+  @if $position == left or $position == right {
+    background: -webkit-linear-gradient(top, $color 0%, $color $stripe/($stripe+$spacing)*100%, transparent $stripe/($stripe+$spacing)*100%, transparent 100%);
+    background: linear-gradient(to bottom, $color 0%, $color $stripe/($stripe+$spacing)*100%, transparent $stripe/($stripe+$spacing)*100%, transparent 100%);
+    background-repeat: repeat-y;
+    background-size: ($width)*1px ($stripe+$spacing)*1px;
+    background-position: $position ($stripe)*1px;
+  } @else if $position == top or $position == bottom {
+    background: -webkit-linear-gradient(right, $color 0%, $color $stripe/($stripe+$spacing)*100%, transparent $stripe/($stripe+$spacing)*100%, transparent 100%);
+    background: linear-gradient(to left, $color 0%, $color $stripe/($stripe+$spacing)*100%, transparent $stripe/($stripe+$spacing)*100%, transparent 100%);
+    background-repeat: repeat-x;
+    background-size: ($stripe+$spacing)*1px ($width)*1px;
+    background-position: ($stripe)*1px $position;
+  }
+}
+
+// ------------------------------
+//　タイポグラフィ
+// ------------------------------
+@mixin heading-large($entry,$decoration) {
+  @if $entry == true {
+    margin: 0 ($gutter/2) $entry-element-margin-bottom-md ($gutter/2);
+  } @else {
+    margin: 0 0 $entry-element-margin-bottom-md 0;
+  }
+  color: #333;
+}
+
+@mixin heading-medium($entry,$decoration) {
+  @if $entry == true {
+    margin: 0 ($gutter/2) 20px ($gutter/2);
+  } @else {
+    margin: 0 0 20px 0;
+  }
+  @include font-size(20);
+  color: #333;
+}
+
+@mixin heading-small($entry,$decoration) {
+  @if $entry == true {
+    margin: 0 ($gutter/2) 20px ($gutter/2);
+  } @else {
+    margin: 0 0 20px 0;
+  }
+  @include font-size(18);
+}
+
+@mixin heading-xsmall($entry,$decoration) {
+  @if $entry == true {
+    margin: 0 ($gutter/2) 20px ($gutter/2);
+  } @else {
+    margin: 0 0 20px 0;
+  }
+  @include font-size(16);
+}
+
+// マーカー
+@mixin marker($color: map-get($color-primary, base), $height: 45%){
+  position: relative;
+  font-style: normal;
+  font-weight: normal;
+  background: linear-gradient(transparent $height, $color 0);
+}
+
+
+
+// ------------------------------
+//　テキストの切り捨て
+// ------------------------------
+@mixin truncation(){
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+// ------------------------------
+//　画像
+// ------------------------------
+//レスポンシブイメージ
+@mixin responsive-image() {
+  display: block;
+  max-width: 100%;
+  height:auto;
+}
+
+
+// ------------------------------
+// 三角形
+// ------------------------------
+/// @param $direction - Triangle direction, either `top`, `right`, `bottom` or `left`
+/// @param $color [currentcolor] - Triangle color
+/// @param $width [10px] - Triangle width
+/// @param $height [10px] - Triangle height
+@mixin triangle ($direction: bottom, $color:currentcolor, $width:10px, $height:10px) {
+  content: "";
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+
+  @if $direction == top {
+    border-top: 0;
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-bottom: $height solid $color;
+  } @else if $direction == right {
+    border-right: 0;
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-left: $height solid $color;
+  } @else if $direction == bottom {
+    border-bottom: 0;
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-top: $height solid $color;
+  } @else {
+    border-left: 0;
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-right: $height solid $color;
+  }
+
+}

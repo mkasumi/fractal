@@ -1,0 +1,30 @@
+/* ------------------------------
+　　ヘッダー
+------------------------------ */
+.g-header {
+    padding: 20px 0;
+}
+
+.g-header__inner {
+    display: flex;
+}
+
+.g-header__logo {
+    margin: 0;
+    @include font-size(20);
+    line-height: 1;
+}
+
+.g-header__nav {
+    width: 100%;
+}
+
+.g-nav__link {
+    color: map-get($color-neutral, dark);
+    font-weight: bold;
+
+    &:hover {
+        color: map-get($color-primary, base);
+        text-decoration: none;
+    }
+}

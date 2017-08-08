@@ -1,0 +1,49 @@
+// ------------------------------
+//　カラー
+// ------------------------------
+// ブランドカラー
+$color-primary: (
+  lightest: #d9f5e8,
+  lighter: #a8e8ca,
+  light: #67cc9c,
+  base: #42b983,
+  dark: #42b983,
+);
+
+$color-secondary: (
+  light: #efc09a,
+  base: #e96900,
+);
+
+// モノクロ
+$color-neutral: (
+  lightest: #FFF,
+  lighter: #f8f8f8,
+  light: #f6f6f6,
+  base: #ddd,
+  dark: #7f8c8d,
+  darkest: #34495e,
+);
+
+$color-state: (
+  required: #F7412D,
+  optional:#999999,
+);
+
+$color-text: (
+  light: #7f8c8d,
+  base: #34495e,
+  mute: #7f8c8d,
+);
+
+$color-bg: (
+  base: #FFF,
+);
+
+// 各sns色
+$color-sns: (
+  facebook: #3b5999,
+  twitter: #55acee,
+  gplus: #dd4b39,
+  youtube: #cd201f,
+);

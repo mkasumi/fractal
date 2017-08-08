@@ -1,0 +1,81 @@
+.c-tag-filter {
+    margin: 0 0 50px 0;
+}
+.c-tag-filter__heading {
+    margin: 0 0 15px 0;
+    padding: 0 0 10px 0;
+    line-height: 1.5;
+    border-bottom: $border-width-thick solid map-get($color-primary, base);
+}
+.c-tag-filter__title {
+    margin: 0 0 15px 0;
+}
+.c-tag-filter__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @include font-size(14);
+}
+.c-tag-filter__item {
+    margin: 0 10px 10px 0;
+    line-height: 1.2;
+}
+.c-tag-filter__label {
+    display: inline-flex;
+    border-radius: $border-radius-md;
+    border: $border-width-thin solid map-get($color-primary, base); 
+}
+.c-tag-filter__link {
+    display: block;
+    padding: 2px 5px;
+    color: #FFF;
+    background: map-get($color-primary, base);
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:hover,
+    &:visited,
+    &:active,
+    &:focus {
+        color: #FFF;
+    }
+}
+.c-tag-filter__delete {
+    display: block;
+    padding: 2px 5px;
+    color: #FFF;
+    border-left: $border-width-thin #FFF solid; 
+    background: map-get($color-primary, base);
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:hover,
+    &:visited,
+    &:focus,
+    &:active {
+        color: #FFF;
+    }
+}
+
+@media screen and (min-width: $breakpoint-md-min) {
+    .c-tag-filter__link {
+        &:hover {
+            color: #FFF;
+            background: map-get($color-primary, base);
+            transition: all .3s ease;
+        }
+    }
+    .c-tag-filter__delete {
+        &:hover {
+            color: #FFF;
+            background: map-get($color-primary, base);
+            transition: all .3s ease;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+// ------------------------------
+//　ベース
+// ------------------------------
+
+// グリッドの間隔
+$gutter                        : 30px;
+$gutter-mobile                 : 20px;
+
+// ------------------------------
+//　フォント
+// ------------------------------
+// $font-hiragino                     : "ヒラギノ角ゴ pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+// $font-yu-gothic                    : "游ゴシック", YuGothic, "ヒラギノ角ゴ pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+// $font-meiryo                       : Meiryo,'メイリオ',"ヒラギノ角ゴ pro", "Hiragino Kaku Gothic Pro",'ＭＳ Ｐゴシック','MS PGothic',Verdana,sans-serif;
+// $font-base                         : $font-hiragino;
+// $font-heading                      : $font-base;
+
+// ------------------------------
+//　ファイルのパス
+// ------------------------------
+$acms-font                         : '/themes/system/fonts/'; // フォントのパスを上書き
+$root-theme-img                    : '/themes/**/images/'; // 画像のパスを上書き
+
+
+// ------------------------------
+//　ヘッダー
+// ------------------------------
+$sp-header-height                  : 60px;
+$global-nav-height                 : 50px;
+
+// ------------------------------
+//　エントリー
+// ------------------------------
+$entry-margin-bottom               : 25px;
+
+$entry-element-margin-bottom-sm    : 10px !default;
+$entry-element-margin-bottom-md    : 25px !default;
+$entry-element-margin-bottom-lg    : 30px !default;
+$entry-element-margin-bottom-xl    : 50px !default;
+

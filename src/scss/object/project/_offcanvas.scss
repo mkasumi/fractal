@@ -1,0 +1,86 @@
+/* ------------------------------
+　　オフキャンバス
+------------------------------ */
+@media (max-width: $breakpoint-lg-max) {
+  #nav {
+    padding: 0 0  100px 0;
+    box-sizing: border-box;
+  }
+
+  .p-offcanvas-nav-title {
+    margin: 0;
+    height: 60px;
+    padding: 15px;
+    line-height: 2;
+    @include font-size(18);
+    background: map-get($color-neutral, base);
+    box-sizing: border-box;
+  }
+
+  /* グローバルナビゲーション */
+  .p-offcanvas-nav {
+    margin: 0 0 15px 0;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      position: relative;
+      display: block;
+      padding: 15px;
+      @include font-size(18);
+      &.navbarBtn {
+        border: 0;
+      }
+      &.stay {
+        a {
+          background: map-get($color-primary, light);
+        }
+        .no-js a & {
+          background: map-get($color-primary, light);
+        }
+      }
+      &:first-child {
+        border: 0;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 1px;
+        @include dotted($position: bottom,$color:map-get($color-primary, base), $stripe: 1, $spacing: 5, $width:1)
+      }
+      ul {
+        display: none;
+      }
+    }
+    a {
+      display: block;
+      margin: -15px;
+      padding: 15px;
+      color: map-get($color-text, base);
+      &:hover {
+        text-decoration: none;
+      }
+      .no-js & {
+        color: map-get($color-text, base);
+      }
+    }
+  }
+
+  /* オフキャンバス内のパーツ */
+  .p-offcanvas-bar {
+    display: none;
+    padding: 0 0 100px 0;
+
+    .js-acms-offcanvas-active & {
+      background: #FFF;
+    }
+
+    // ここにコンポーネントのクラス名を書いて上書きします
+  }
+
+}

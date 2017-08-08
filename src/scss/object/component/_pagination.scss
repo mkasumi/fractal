@@ -1,0 +1,70 @@
+/* ------------------------------
+　　ページネーション
+------------------------------ */
+.c-pagination__container {
+  margin: 0 0 30px 0;
+    text-align: center;
+}
+
+.c-pagination {
+  position: relative;
+  display: inline-block;
+  padding: 0 40px;
+  text-align: center;
+}
+.c-pagination__list {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.c-pagination__item {
+  display: inline-block;
+  margin: 0 0 10px;
+  @include font-size(13);
+  border: 1px solid color-get($color-primary, base);
+}
+.c-pagination__link {
+  padding: 5px;
+}
+
+.c-pagination__arrow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c-pagination__arrow-item {
+  &.-left {
+    position: absolute;
+    left: 0;
+    width: 40px;
+  }
+
+  &.-right {
+    position: absolute;
+    right: 0;
+    width: 40px;
+  }
+}
+
+.c-pagination__arrow-link {
+  padding: 5px;
+}
+
+@media screen and (min-width: $breakpoint-md-min) {
+  .c-pagination__link {
+    &:hover {
+      color: map-get($color-primary, base);
+      text-decoration: none;
+    }
+  }
+
+  .c-pagination__arrow-link {
+    &:hover {
+      color: map-get($color-primary, base);
+      text-decoration: none;
+    }
+  }
+}
