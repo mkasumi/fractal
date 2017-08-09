@@ -1,2 +1,2 @@
 # fractal
-Example repository for using Fractal
+Example of using Fractal
